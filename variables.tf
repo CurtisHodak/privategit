@@ -9,5 +9,5 @@ variable "ami_id" {
 
 variable "public_key_path" {
   description = "Path to the public SSH key"
-  default     = "~/.ssh/id_rsa.pub"
+  default     = "~/.ssh/gitlabkey.pub"
 }

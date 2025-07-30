@@ -4,7 +4,7 @@ variable "aws_region" {
 
 variable "ami_id" {
   description = "Amazon Linux 2 AMI (HVM), SSD Volume Type"
-  default     = "ami-04505e74c0741db8d" # Change if using another region
+  default     = "ami-08ca1d1e465fbfe0c" # Change if using another region
 }
 
 variable "public_key" {

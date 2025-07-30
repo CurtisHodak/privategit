@@ -1,6 +1,6 @@
 resource "aws_key_pair" "gitlab_key" {
   key_name   = "gitlab-key"
-  public_key = file(var.public_key_path)
+  public_key = var.public_key
 }
 
 resource "aws_security_group" "gitlab_sg" {

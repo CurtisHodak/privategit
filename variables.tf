@@ -7,7 +7,7 @@ variable "ami_id" {
   default     = "ami-04505e74c0741db8d" # Change if using another region
 }
 
-variable "public_key_path" {
+variable "public_key" {
   description = "Path to the public SSH key"
-  default     = "~/.ssh/gitlabkey.pub"
+  default     = ""
 }

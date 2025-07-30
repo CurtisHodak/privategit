@@ -50,8 +50,13 @@ resource "aws_instance" "gitlab" {
   key_name               = aws_key_pair.gitlab_key.key_name
   vpc_security_group_ids = [aws_security_group.gitlab_sg.id]
   user_data              = file("${path.module}/user_data.sh")
-  volume_size           = 50
-  
+
+
+root_block_device {
+  volume_size = 50  # ✅ Size in GiB
+}
+
+
   tags = {
     Name = "GitLab-CE"
   }

@@ -44,24 +44,24 @@ resource "aws_security_group" "gitlab_sg" {
   }
 }
 
-resource "aws_instance" "gitlab" {
-  ami                    = var.ami_id
-  instance_type          = "t3.medium"
-  key_name               = aws_key_pair.gitlab_key.key_name
-  vpc_security_group_ids = [aws_security_group.gitlab_sg.id]
-  user_data              = file("${path.module}/user_data.sh")
+# resource "aws_instance" "gitlab" {
+#   ami                    = var.ami_id
+#   instance_type          = "t3.medium"
+#   key_name               = aws_key_pair.gitlab_key.key_name
+#   vpc_security_group_ids = [aws_security_group.gitlab_sg.id]
+#   user_data              = file("${path.module}/user_data.sh")
 
 
-root_block_device {
-  volume_size = 50  # ✅ Size in GiB
-}
+# root_block_device {
+#   volume_size = 50  # ✅ Size in GiB
+# }
 
 
-  tags = {
-    Name = "GitLab-CE"
-  }
+#   tags = {
+#     Name = "GitLab-CE"
+#   }
 
-  lifecycle {
-    ignore_changes = [ami] # Useful for keeping fixed base image
-  }
-}
+#   lifecycle {
+#     ignore_changes = [ami] # Useful for keeping fixed base image
+#   }
+# }

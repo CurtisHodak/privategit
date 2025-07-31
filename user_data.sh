@@ -1,8 +1,13 @@
 #!/bin/bash
 # Update system and install Docker
+
 #Create the public key file first 
+
 # ssh-keygen -t rsa -b 4096 -C "gitlab-ec2-access" -f ~/.ssh/gitlabkey
-Create a variable in your stack 
+
+# cat  ~/.ssh/gitlabkey
+
+# Create a variable in your stack called TF_VAR_public_key and set it to the contents of ~/.ssh/gitlabkey.pub
 # ssh -i ~/.ssh/gitlabkey ec2-user@<public-ip>
 sudo yum update -y
 sudo yum install docker -y

@@ -30,3 +30,7 @@ docker run --detach \
   --volume /srv/gitlab/logs:/var/log/gitlab \
   --volume /srv/gitlab/data:/var/opt/gitlab \
   gitlab/gitlab-ce:latest
+
+# Get admin or root password for gitlab username is root
+#docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
+# Other users only need to sign into the instance, not a gitlab.com account.
